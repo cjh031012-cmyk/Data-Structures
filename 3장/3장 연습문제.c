@@ -70,3 +70,41 @@ int main(void) {
 
     return 0;
 }
+
+
+///10번 문제
+#include <stdio.h>
+#define MAX_SIZE 100
+
+int items = 0; 
+
+void deleteElement(int array[], int loc) {
+    for (int i = loc; i < items - 1; i++) {
+        array[i] = array[i + 1];
+    }
+
+    array[items - 1] = 0; 
+    items--;
+}
+
+void printArray(int array[]) {
+    for (int i = 0; i < items; i++) {
+        printf("%d ", array[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    int arr[MAX_SIZE] = { 10, 20, 30, 40, 50 };
+    items = 5;
+
+    printf("삭제 전: ");
+    printArray(arr);
+
+    deleteElement(arr, 2);  
+
+    printf("삭제 후: ");
+    printArray(arr);
+
+    return 0;
+}
