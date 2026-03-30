@@ -108,3 +108,32 @@ int main() {
 
     return 0;
 }
+
+////12번
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct test {
+    int x;
+    char s[20];
+} test;
+
+int main() {
+    test* p;
+    p = (test*)malloc(sizeof(test));
+
+    if (p == NULL) {
+        exit(1);
+    }
+
+    p->x = 100;
+    strcpy(p->s, "just testing");
+
+    printf("x = %d\n", p->x);
+    printf("s = %s\n", p->s);
+
+    free(p);
+    return 0;
+}
