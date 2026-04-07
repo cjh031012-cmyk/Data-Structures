@@ -143,10 +143,10 @@ void zip(char* str) {
 int main(void) {
 	char str[100];
 
-	printf("문자열 입력: ");
+	printf("문자열 입력을 입력하시오: ");
 	scanf("%s", str);
 
-	printf("압축 결과: ");
+	printf("압축된 문자열: ");
 	zip(str);
 
 	return 0;
