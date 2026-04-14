@@ -108,3 +108,28 @@ int main(void)
 	printf("큐는 공백상태입니다.\n");
 	return 0;
 }
+
+
+///9번
+
+
+int main(void) {
+	StackType st1, st2;
+	int i = 0;
+	init_stack(&st1);
+	init_stack(&st2);
+
+	push(&st1, 10);
+	push(&st1, 20);
+	push(&st1, 30);
+
+	for (i = 0; i < 3; i++) {
+		if (is_empty(&st2)) {
+			while (!is_empty(&st1)) {
+				push(&st2, pop(&st1));
+			}
+		}
+		printf("%d\n", pop(&st2)); 
+	}
+	return 0;
+}
