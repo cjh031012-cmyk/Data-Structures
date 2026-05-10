@@ -80,3 +80,40 @@ int main(void) {
 	free_list(head);
 	return 0;
 }
+
+
+/// 4번 문제
+int get_size(ListNode* L) {
+	ListNode* p = L;
+	int count = 0;
+	do {
+		count++;
+		p = p->link;
+	} while (p != L);
+	return count;
+}
+
+int main(void) {
+	ListNode* head = NULL;
+	ListNode* result = NULL;
+
+	int size = 0;
+
+	head = insert_first(head, 10);
+	head = insert_first(head, 20);
+
+	print_list(head);
+	printf("\n");
+
+	result = search(head, 20);
+	if (result != NULL)
+		printf("찾음: %d\n", result->data);
+	else
+		printf("못찾음\n");
+
+	size = get_size(head);
+	printf("데이터 개수는: %d\n", size);
+
+	free_list(head);
+	return 0;
+}
